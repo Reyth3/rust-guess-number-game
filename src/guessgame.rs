@@ -6,11 +6,11 @@ pub fn run()
     let mut rng = rand::thread_rng();
     let answer : i32 = rng.gen_range(1..10);
 
-    //println!("Generated number: {}", answer);
+    //println!("Generated number: {}", answer); // debug lol
     let mut no_guesses : i16 = 0;
     while guess != answer {
         let mut input = String::new(); // Not sure if this is ideal, but when I put it outside the scope of the loop then it would retain the previous values, which I didn't know how to deal with without raising the complexity of the code, which would probably have a similar impact on performance if not bigger anyway. I don't know anything.
-        println!("Currently string is as follows: {}", input);
+        //println!("Currently string is as follows: {}", input); // For debugging earlier, but this is no longer needed since the input string is now in scope
         io::stdin() // No need to wrap this in a method I believe since it's just one time use
             .read_line(&mut input)
             .expect("Error!");
